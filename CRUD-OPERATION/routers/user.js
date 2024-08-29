@@ -12,5 +12,6 @@ router.patch('/asd', userController.updateUser)
 router.delete('/:id', userController.deleteRecord)
 router.post('/signup',userController.userSignUp)
 router.post('/login', userController.userLogin)
+// router.get('/otp',userController.generateOtp)
 
 module.exports=router;

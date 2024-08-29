@@ -52,6 +52,8 @@ exports.deleteRecord = async(req,res)=>{
 
 exports.userSignUp = async(req,res)=>{
     const {email, password,name} = req.body
+    console.log(req.body)
+    return
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);    
     if(!(email && password && name)){
@@ -89,12 +91,20 @@ exports.userLogin = async(req,res)=>{
         return res.status(400).json({message:"Invalid password"})
     }
     const token = jwt.sign({id:existingUser._id}, secret
-        // , { expiresIn: '1h' }
+        , { expiresIn: '1h' }
     );
     console.log(`>>>>>>token>>>>>>>>>>>`,token);
     
     res.json({token,existingUser})
+
 }
+
+
+
+function generateOTP() { 
+     return Math.floor((Math.random()*10000))
+} 
+console.log(generateOTP());
 
 
 

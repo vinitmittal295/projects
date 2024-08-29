@@ -24,5 +24,6 @@ module.exports=async(req,res,next)=>{
     const{id}=decode
     const user=await User.findOne({_id:id})
     console.log(user)
+    next()
 
 }
