@@ -99,13 +99,22 @@ exports.userLogin = async(req,res)=>{
 
 }
 
-
+// exports.generateOtp=async(req,res)=>{
+//     const otp=Math.floor((Math.random()*10000))
+//     return otp
+    
+// }
 
 function generateOTP() { 
      return Math.floor((Math.random()*10000))
 } 
 console.log(generateOTP());
 
+function date(){
+    return Date.now(10*(60*1000))
+
+}
+console.log(date())
 
 
 
