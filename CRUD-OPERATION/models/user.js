@@ -13,10 +13,13 @@ const userSchema=new mongoose.Schema(
         password:{
             type:String,
             require:true
-        }
+        },
+        otp:{type:Number,require:true},
+        exotp:{type:Number,require:true},
 
 
     },
+
     {timestamps:true,versionKey:false}
 
 )

@@ -5,7 +5,7 @@ const verifyAuth=require('../middleware/verifyAuth')
 
 
 
-router.post('/',userController.CreateUser)
+router.post('/',verifyAuth,userController.CreateUser)
 router.get('/',verifyAuth,userController.getAlluser)
 router.get('/:id', userController.getSingleUser)
 router.patch('/asd', userController.updateUser)

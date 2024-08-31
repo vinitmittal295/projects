@@ -2,6 +2,7 @@ const User=require('../models/user')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const secret = 'wedrfuiofdsghjklkjhmnvcxvbnmlkjytertyuiouy'
+const {generateOTP,expireOtp}=require("../helper/otp")
 exports.CreateUser = async(req,res)=>{
     const data=req.body
     const {email}=req.body
@@ -52,8 +53,12 @@ exports.deleteRecord = async(req,res)=>{
 
 exports.userSignUp = async(req,res)=>{
     const {email, password,name} = req.body
+    const otp=generateOTP()
+    console.log(otp)
+    const exotp=expireOtp()
+    console.log(exotp)
     console.log(req.body)
-    return
+    // return
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);    
     if(!(email && password && name)){
@@ -63,7 +68,7 @@ exports.userSignUp = async(req,res)=>{
     if(existingUser){
         return res.status(400).json({message:"User already exists"})
     }
-    const data = {email,name,password:hash}
+    const data = {email,name,password:hash,otp,exotp}
     const user = new User(data)
     await user.save();
     res.status(201).json(user)
@@ -73,7 +78,7 @@ exports.userSignUp = async(req,res)=>{
 
 
 exports.userLogin = async(req,res)=>{
-    const {email, password,name} = req.body  
+    const {email, password,name,otp} = req.body
 
     if(!(email && password)){
         return res.status(400).json({message:"all Feild are requird"})
@@ -90,6 +95,11 @@ exports.userLogin = async(req,res)=>{
     if(!match){
         return res.status(400).json({message:"Invalid password"})
     }
+    const currentTime=Date.now()
+    
+    if(!(otp===existingUser.otp) && currentTime <=existingUser.exotp){
+        return res.status(400).json({message:"otp is not verified"})
+    }
     const token = jwt.sign({id:existingUser._id}, secret
         , { expiresIn: '1h' }
     );
@@ -99,22 +109,6 @@ exports.userLogin = async(req,res)=>{
 
 }
 
-// exports.generateOtp=async(req,res)=>{
-//     const otp=Math.floor((Math.random()*10000))
-//     return otp
-    
-// }
-
-function generateOTP() { 
-     return Math.floor((Math.random()*10000))
-} 
-console.log(generateOTP());
-
-function date(){
-    return Date.now(10*(60*1000))
-
-}
-console.log(date())
 
 
 
