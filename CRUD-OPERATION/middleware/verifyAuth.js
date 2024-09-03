@@ -2,21 +2,21 @@ const User=require('../models/user')
 const jwt = require('jsonwebtoken');
 const secret = 'wedrfuiofdsghjklkjhmnvcxvbnmlkjytertyuiouy'
 module.exports=async(req,res,next)=>{
-    console.log(req)
+    // console.log(req)
     const header=req.headers.authorization
-    console.log(header)
+    // console.log(header)
     if(!(header)){
         return res.status(400).json({message:"jj"})
     }
 
     const token=header.split(" ")[1]
-    console.log(token)
+    // console.log(token)
 
     if(!(token)){
         return res.status(400).json({message:"jj"})
     }
     const decode=jwt.verify(token,secret)
-    console.log(decode)
+    // console.log(decode)
 
     if(!(decode)){
         return res.status(400).json({message:"jj"})
