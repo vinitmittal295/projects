@@ -4,7 +4,7 @@ const secret = 'wedrfuiofdsghjklkjhmnvcxvbnmlkjytertyuiouy'
 module.exports=async(req,res,next)=>{
     // console.log(req)
     const header=req.headers.authorization
-    // console.log(header)
+    console.log("headar",header)
     if(!(header)){
         return res.status(400).json({message:"jj"})
     }

@@ -6,7 +6,7 @@ const verifyAuth=require('../middleware/verifyAuth')
 
 
 router.post('/',verifyAuth,userController.CreateUser)
-router.get('/',verifyAuth,userController.getAlluser)
+router.get('/getall',verifyAuth,userController.getAlluser)
 router.get('/:id',verifyAuth, userController.getSingleUser)
 router.patch('/asd', verifyAuth,userController.updateUser)
 router.delete('/:id', verifyAuth,userController.deleteRecord)
