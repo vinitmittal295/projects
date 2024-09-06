@@ -1,11 +1,11 @@
 // import React from 'react'
 
-function Home() {
+function Form() {
   return (
     <div>
-      <h1>this is home</h1>
+      
     </div>
   )
 }
 
-export default Home
+export default Form
