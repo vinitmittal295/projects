@@ -1,17 +1,23 @@
-
-import './App.css';
-// import Layout from './components/layout/Layout';
-import Layout from './components/Layout/Layout';
+import {Routes,Route} from "react-router-dom"
+import HomePage from "./pages/HomePage";
+import PageNotFound from "./pages/PageNotFound";
+import Contact from "./pages/Contact";
+import Policy from "./pages/Policy";
+import About from "./pages/About";
 
 function App() {
   return (
-    <>
-    <Layout>
-    <h1>ecommerce app</h1>    
-    </Layout>
-      
+    <> 
+     <Routes>
+     <Route path="/" element={<HomePage/>}/>
+     
+     <Route path="/contact" element={<Contact/>}/>
+     <Route path="/policy" element={<Policy/>}/>
+     <Route path="/about" element={<About/>}/>
+     <Route path="*" element={<PageNotFound/>}/>
+     </Routes> 
     </>
-  );
+  )
 }
 
 export default App;
