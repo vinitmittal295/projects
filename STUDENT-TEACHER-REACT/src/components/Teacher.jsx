@@ -2,7 +2,9 @@ import React from 'react'
 
 const teacher = () => {
   return (
-    <div>teacher</div>
+    <div>
+    <h1>teacher</h1>
+  </div>
   )
 }
 
