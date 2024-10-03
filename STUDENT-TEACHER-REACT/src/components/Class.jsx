@@ -17,7 +17,7 @@ const Class = () => {
   </div>
 
   <div className="mb-3">
-    <label htmlFor="exampleInputEmail1" className="form-label">Duration</label>
+    <label htmlFor="exampleInputEmail1" className="form-label">Duration</label> 
     <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
   </div>
 

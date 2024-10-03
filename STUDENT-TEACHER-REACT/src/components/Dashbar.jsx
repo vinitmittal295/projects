@@ -31,7 +31,7 @@
 //         </li>
 //         <li className="nav-item">
 //           <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-//         </li>
+//         </li>    
 //       </ul>
 //     </div>
 //   </div>
@@ -83,10 +83,19 @@ const Dashbar = () => {
                 <Link className="nav-link" to="/class">class</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/class">class Data</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/teacher">teacher</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/teacher">teacher Data</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link disabled" to="/student" aria-disabled="true">student</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link disabled" to="/student" aria-disabled="true">student Data</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/login">login</Link>
