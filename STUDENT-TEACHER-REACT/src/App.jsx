@@ -6,6 +6,10 @@ import Student from "./components/Student"
 import { BrowserRouter,Route,Routes } from "react-router-dom"
 import Dashbar from "./components/Dashbar"
 import Home from './components/Home';
+// import StudentDataShow
+import StudentDataShow from './components/StudentDataShow';
+import TeacherDataShow from './components/TeacherDataShow';
+import ClassDataShow from './components/ClassDataShow';
 
 function App() {
 
@@ -19,6 +23,9 @@ function App() {
     <Route path="/signup" element={<Signup/>}></Route>
     <Route path="/teacher" element={<Teacher/>}></Route>
     <Route path="/student" element={<Student/>}></Route>
+    <Route path="/studentdata" element={<StudentDataShow/>}></Route>
+    <Route path="/teacherdata" element={<TeacherDataShow/>}></Route>
+    <Route path="/classdata" element={<ClassDataShow/>}></Route>
     <Route path="/login" element={<Login/>}></Route>
     </Routes>
     </BrowserRouter>

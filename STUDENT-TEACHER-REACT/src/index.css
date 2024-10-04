@@ -160,4 +160,68 @@ form {
       font-size: 14px;
     }
   }
+
+
+  /* model css */
+
+  /* Modal background */
+.modal-content {
+  background-color: #f8f9fa; /* Light background color */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid #dee2e6; /* Light border */
+}
+
+/* Modal header */
+.modal-header {
+  background-color: #007bff; /* Primary color for header */
+  color: white; /* White text color for header */
+  border-bottom: 1px solid #0056b3; /* Darker border */
+  padding: 15px;
+}
+
+.modal-title {
+  font-weight: bold;
+  font-size: 1.25rem; /* Increase title size */
+}
+
+/* Close button in header */
+.btn-close {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+}
+
+/* Modal body text */
+.modal-body p {
+  font-size: 1rem;
+  color: #343a40; /* Dark color for body text */
+  line-height: 1.6; /* Better line spacing */
+}
+
+/* Modal footer */
+.modal-footer {
+  background-color: #f1f3f5; /* Light background for footer */
+  border-top: 1px solid #dee2e6;
+  padding: 10px;
+}
+
+/* Buttons in footer */
+.modal-footer .btn-secondary {
+  background-color: #6c757d; /* Secondary color */
+  border-color: #6c757d;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #5a6268; /* Darker on hover */
+}
+
+.modal-footer .btn-primary {
+  background-color: #007bff; /* Primary button color */
+  border-color: #007bff;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #0056b3; /* Darker primary color on hover */
+}
+
   

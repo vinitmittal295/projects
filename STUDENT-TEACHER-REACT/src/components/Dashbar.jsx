@@ -83,19 +83,19 @@ const Dashbar = () => {
                 <Link className="nav-link" to="/class">class</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/class">class Data</Link>
+                <Link className="nav-link" to="/classdata">class Data</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/teacher">teacher</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/teacher">teacher Data</Link>
+                <Link className="nav-link" to="/teacherdata">teacher Data</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link disabled" to="/student" aria-disabled="true">student</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link disabled" to="/student" aria-disabled="true">student Data</Link>
+                <Link className="nav-link disabled" to="/studentdata" aria-disabled="true">student Data</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/login">login</Link>
