@@ -7,12 +7,28 @@ const Student = () => {
   const[name,setName]=useState('')
   const[email,setEmail]=useState('')
   const[phone,setPhone]=useState('')  
-  const[role,setRole]=useState('')
+
+  const[qualification,setQualification]=useState('')
+  const[fee,setFee]=useState('')
+  const[gender,setGender]=useState('')
+  const[rollno,setRollno]=useState('')
+  const[batchname,setBatchName]=useState('')
+  const[joindate,setJoinDate]=useState("")
   const[address,setAddress]=useState("")
+
   const navigate=useNavigate()
 
   const data={
-    name,email,phone,role,address
+    name,
+    email,
+    phone,
+    qualification,
+    fee,
+    gender,
+    rollno,
+    batchname,
+    joindate,
+    address
   }
   const handleSubmit=async(e)=>{
     e.preventDefault()
@@ -20,8 +36,9 @@ const Student = () => {
     console.log(res);
     if(res.status===200){
       alert("data added")
+      navigate("/studentDataShow")
     }
-    navigate("/studentDataShow")
+    
   }
   
   return (
@@ -44,16 +61,37 @@ const Student = () => {
   </div>
 
   <div className="mb-3">
-    <label htmlFor="exampleInputPassword1" className="form-label">role</label>
-    <input type="text" className="form-control" id="exampleInputPassword1" value={role} onChange={(e)=>setRole(e.target.value)} />
+    <label htmlFor="exampleInputPassword1" className="form-label">qualification</label>
+    <input type="text" className="form-control" id="exampleInputPassword1" value={qualification} onChange={(e)=>setQualification(e.target.value)} />
   </div>
   
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">fee</label>
+    <input type="text" className="form-control" id="exampleInputPassword1" value={fee} onChange={(e)=>setFee(e.target.value)} />
+  </div>
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">gender</label>
+    <input type="text" className="form-control" id="exampleInputPassword1" value={gender} onChange={(e)=>setGender(e.target.value)} />
+  </div>
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">rollno</label>
+    <input type="text" className="form-control" id="exampleInputPassword1" value={rollno} onChange={(e)=>setRollno(e.target.value)} />
+  </div>
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">batchname</label>
+    <input type="text" className="form-control" id="exampleInputPassword1" value={batchname} onChange={(e)=>setBatchName(e.target.value)} />
+  </div>
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">joindate</label>
+    <input type="date" className="form-control" id="exampleInputPassword1" value={joindate} onChange={(e)=>setJoinDate(e.target.value)} />
+  </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">address</label>
     <input type="text" className="form-control" id="exampleInputPassword1" value={address} onChange={(e)=>setAddress(e.target.value)} />
   </div>
   <button type="submit" className="btn btn-primary">create student</button>
 </form>
+
 
     </div>
   )

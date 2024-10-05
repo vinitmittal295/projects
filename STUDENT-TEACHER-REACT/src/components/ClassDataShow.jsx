@@ -28,6 +28,7 @@ const ClassDataShow = () => {
         const res=await axios.delete(`http://localhost:3005/class/${id}`)
         console.log(res.data)
         setDelet(res.data)
+        fetch()
         
       }
 

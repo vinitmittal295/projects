@@ -38,6 +38,7 @@ const StudentDataShow = () => {
       console.log(res.data)
       setDelet(res.data)
       
+      fetch()
     }
 
   return (
@@ -52,7 +53,12 @@ const StudentDataShow = () => {
                     <p>name:-{item.name}</p>
                     <p>email:-{item.email}</p>
                     <p>phone:-{item.phone}</p>
-                    <p>role:-{item.role}</p>
+                    <p>role:-{item.qualification}</p>
+                    <p>role:-{item.fee}</p>
+                    <p>role:-{item.gender}</p>
+                    <p>role:-{item.rollno}</p>
+                    <p>role:-{item.batchname}</p>
+                    <p>role:-{item.joindate}</p>
                     <p>address:-{item.address}</p>
                     <button onClick={()=>getdetails(item._id)}>get single deails</button>
                     <button onClick={()=>deleteData(item._id)}>delete this data</button>

@@ -36,6 +36,8 @@ const TeacherDataShow = () => {
       console.log(id)
       const res=await axios.delete(`http://localhost:3005/teachers/${id}`)
       setDelet(res.data)
+      fetch()
+
 
     }
   return (
