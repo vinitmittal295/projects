@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Student = () => {
   const[name,setName]=useState('')
@@ -8,6 +9,7 @@ const Student = () => {
   const[phone,setPhone]=useState('')  
   const[role,setRole]=useState('')
   const[address,setAddress]=useState("")
+  const navigate=useNavigate()
 
   const data={
     name,email,phone,role,address
@@ -19,7 +21,7 @@ const Student = () => {
     if(res.status===200){
       alert("data added")
     }
-
+    navigate("/studentDataShow")
   }
   
   return (

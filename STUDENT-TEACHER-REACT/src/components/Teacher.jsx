@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const teacher = () => {
     const [name,setName] = useState('')
@@ -12,6 +13,9 @@ const teacher = () => {
     const [role,setRole] = useState("")
     const[joinDate,setJoinDate] = useState("")
     const[employeId,setEmployeeId] = useState("")
+
+
+    const navigate=useNavigate()
     
     const handleSubmit=async(e)=>{
       e.preventDefault()
@@ -34,6 +38,8 @@ const teacher = () => {
         alert("data added successfully")
       }
       
+
+      navigate("/TeacherDataShow")
     }
 
   return (

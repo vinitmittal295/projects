@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const ClassDataShow = () => {
     const [data,setData]=useState([])
+    const[delet,setDelet]=useState()
 
     useEffect(()=>{
         fetch()
@@ -11,9 +12,9 @@ const ClassDataShow = () => {
     const fetch=async()=>{
         const res=await axios.get("http://localhost:3005/class/getall")
         setData(res.data)
-        if(res.status===200){
-            alert("data fethced")
-        }
+        // if(res.status===200){
+        //     alert("data fethced")
+        // }
     }
     const getdetails=async(id)=>{
         console.log(">>>id >>>",id)
@@ -21,6 +22,14 @@ const ClassDataShow = () => {
         console.log(res.data)
         setData(res.data)
     };
+
+    const deletedata=async(id)=>{
+        console.log(">>>>>>>delete id",id)
+        const res=await axios.delete(`http://localhost:3005/class/${id}`)
+        console.log(res.data)
+        setDelet(res.data)
+        
+      }
 
 
   return (
@@ -40,6 +49,7 @@ const ClassDataShow = () => {
                 <p>weekoff:- {item.weekoff}</p>
                 <p>numofsheet:- {item.numofsheet}</p>
                 <button onClick={()=>getdetails(item._id)}>get deails</button>
+                <button onClick={()=>deletedata(item._id)}>delete details</button>
                 </div>
             ))
         )

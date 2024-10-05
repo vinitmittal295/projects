@@ -4,7 +4,8 @@ import axios from 'axios'
 const StudentDataShow = () => {
     const[data,setData]=useState([]) //all
     const [view,setView]=useState([]) //one
-    const[modelview,setModelView]=useState(false) // model
+    const[modelview,setModelView]=useState(false)
+    const[delet,setDelet]=useState() // model
 
     useEffect(()=>{
         fetch()
@@ -14,9 +15,9 @@ const StudentDataShow = () => {
         const response=await axios.get("http://localhost:3005/students/get")
         console.log(response.data);
         setData(response.data)
-        if(response.status===200){
-            alert("data fetched successfully")
-        }
+        // if(response.status===200){
+        //     alert("data fetched successfully")
+        // }
         
     }
     const getdetails=async(id)=>{
@@ -31,6 +32,13 @@ const StudentDataShow = () => {
         setModelView(false)
     }
 
+    const deleteData=async(id)=>{
+      console.log(">>>>>>>delete id",id)
+      const res=await axios.delete(`http://localhost:3005/students/${id}`)
+      console.log(res.data)
+      setDelet(res.data)
+      
+    }
 
   return (
     <div>
@@ -46,7 +54,8 @@ const StudentDataShow = () => {
                     <p>phone:-{item.phone}</p>
                     <p>role:-{item.role}</p>
                     <p>address:-{item.address}</p>
-                    <button onClick={()=>getdetails(item._id)}>get deails</button>
+                    <button onClick={()=>getdetails(item._id)}>get single deails</button>
+                    <button onClick={()=>deleteData(item._id)}>delete this data</button>
                 </div>
             ))
         )

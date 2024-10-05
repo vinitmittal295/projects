@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Class = () => {
   const [batchName, setBatchName] = useState('');
@@ -9,6 +10,8 @@ const Class = () => {
   const[fee,setFee]=useState("")
   const[weekoff,setWeekoff]=useState("")
   const[numofsheet, setNumofsheet]=useState("")
+
+  const navigate = useNavigate();
 
 const handleSubmit = async(e) => {
   e.preventDefault();
@@ -27,6 +30,8 @@ const handleSubmit = async(e) => {
   if(res.status===200){
     alert("data added")
   }
+
+  navigate("/classDataShow")
 
 }
 
